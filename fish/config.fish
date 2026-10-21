@@ -7,4 +7,6 @@ end
 starship init fish | source
 zoxide init fish | source
 fzf --fish | source
-jj util completion fish | source
+if command -sq jj
+    jj util completion fish | source
+end
