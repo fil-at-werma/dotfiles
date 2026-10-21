@@ -3,6 +3,7 @@ if status is-interactive
     set -g fish_greeting
     alias ls="eza --color=always --icons=always --long"
     alias up="sudo dnf upgrade -y && flatpak update"
+    alias t="todo.sh"
 end
 starship init fish | source
 zoxide init fish | source
