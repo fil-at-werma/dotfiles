@@ -1,4 +1,6 @@
 if status is-interactive
+    set -Ux EDITOR /usr/bin/hx
+    set -Ux VISUAL /usr/bin/hx
     # Commands to run in interactive sessions can go here
     set -g fish_greeting
     alias ls="eza --color=always --icons=always --long"
