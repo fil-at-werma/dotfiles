@@ -6,6 +6,7 @@ if status is-interactive
     alias up="sudo dnf --refresh && sudo dnf upgrade -y && flatpak update"
     alias t="todo.sh"
     alias ta="todo.sh add '$(date -Idate)$1'"
+    alias add-key="ssh-add ~/.ssh/$1"
 end
 starship init fish | source
 zoxide init fish | source
