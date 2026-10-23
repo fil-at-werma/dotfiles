@@ -7,6 +7,7 @@ if status is-interactive
     alias t="todo.sh"
     alias ta="todo.sh add '$(date -Idate)$1'"
     alias add-key="ssh-add ~/.ssh/$1"
+    alias wiki="z wiki && hx '~/OneDrive/wiki/00-09 Index/00.00 Index.md' && z -"
 end
 starship init fish | source
 zoxide init fish | source
