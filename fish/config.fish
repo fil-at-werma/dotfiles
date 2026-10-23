@@ -3,7 +3,7 @@ if status is-interactive
     set -g fish_greeting
     alias ls="eza --color=always --icons=always --long"
     alias la="eza -a --color=always --icons=always --long"
-    alias up="sudo dnf --refresh && sudo dnf upgrade -y && flatpak update"
+    alias up="sudo dnf upgrade -y -q && sudo dnf autoremove -y -q && flatpak update"
     alias t="todo.sh"
     alias ta="todo.sh add '$(date -Idate)$1'"
     alias add-key="ssh-add ~/.ssh/$1"
