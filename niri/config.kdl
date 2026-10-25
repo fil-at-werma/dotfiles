@@ -644,4 +644,34 @@ binds {
     // XF86MonBrightnessUp { spawn-sh "noctalia msg brightness-up"; }
     // XF86MonBrightnessDown { spawn-sh "noctalia msg brightness-down"; }
 }
+// Create Workspaces
+// - Rider
+//   - Start Rider at startup
+// - Werma-Communication
+//   - Start Outlook
+//   - Start Teams
+workspace "Rider" {
+    open-on-output "DP-5" // fallback gibt es erst spaeter "eDP-1"
+}
+window-rule{
+    match at-startup=true app-id="rider"
+    open-on-workspace "Rider"
+    open-focused true
+}
+workspace "Werma-Communication" {
+    open-on-output "eDP-1"
+}
+window-rule{
+    match at-startup=true app-id="brave-ompifgpmddkgmclendfeacglnodjjndh-Default" // Teams
+    open-on-workspace "Werma-Communication"
+    open-focused false
+}
+window-rule{
+    match at-startup=true app-id="brave-faolnafnngnfdaknnbpnkhgohbobgegn-Default" // Outlook
+    open-on-workspace "Werma-Communication"
+    open-focused false
+}
 spawn-at-startup "noctalia"
+spawn-at-startup "brave-ompifgpmddkgmclendfeacglnodjjndh-Default"
+spawn-at-startup "brave-faolnafnngnfdaknnbpnkhgohbobgegn-Default"
+spawn-at-startup "rider"
