@@ -658,7 +658,7 @@ window-rule{
     open-on-workspace "Rider"
     open-focused true
 }
-workspace "Werma-Communication" {
+workspace "WermaComm" {
     open-on-output "eDP-1"
 }
 window-rule{
@@ -668,10 +668,27 @@ window-rule{
 }
 window-rule{
     match at-startup=true app-id="brave-faolnafnngnfdaknnbpnkhgohbobgegn-Default" // Outlook
-    open-on-workspace "Werma-Communication"
+    open-on-workspace "WermaComm"
+    open-focused false
+}
+workspace "DevOps" {
+    open-on-output "DP-6"
+}
+window-rule{
+    match at-startup=true app-id="brave-browser"
+    open-on-workspace "DevOps"
+    open-focused false
+}
+window-rule{
+    match at-startup=true app-id="kitty"
+    open-on-workspace "DevOps"
     open-focused false
 }
 spawn-at-startup "noctalia"
-spawn-at-startup "brave-ompifgpmddkgmclendfeacglnodjjndh-Default"
-spawn-at-startup "brave-faolnafnngnfdaknnbpnkhgohbobgegn-Default"
+// That did not work ...
+// spawn-at-startup "brave-ompifgpmddkgmclendfeacglnodjjndh-Default"
+// spawn-at-startup "brave-faolnafnngnfdaknnbpnkhgohbobgegn-Default"
+spawn-at-startup "brave-browser"
+spawn-at-startup "kitty"
 spawn-at-startup "rider"
+
