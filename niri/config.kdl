@@ -644,6 +644,12 @@ binds {
     // XF86MonBrightnessUp { spawn-sh "noctalia msg brightness-up"; }
     // XF86MonBrightnessDown { spawn-sh "noctalia msg brightness-down"; }
 }
+blur {
+    passes 1 // default is 3
+    offset 4.0 // default is 3.0
+    noise 0.03 // default is 0.03
+    saturation 1.5 // default is 1.5
+}
 // Create Workspaces
 // - Rider
 //   - Start Rider at startup
@@ -683,6 +689,14 @@ window-rule{
     match at-startup=true app-id="kitty"
     open-on-workspace "DevOps"
     open-focused false
+}
+window-rule{
+    match app-id="kitty" is-active=false
+    opacity 0.85
+    background-effect {
+        blur true
+        xray true
+    }
 }
 spawn-at-startup "noctalia"
 // That did not work ...
