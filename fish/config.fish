@@ -10,6 +10,7 @@ if status is-interactive
     alias ta="todo.sh add '$(date -Idate)$1'"
     alias add-key="ssh-add ~/.ssh/$1"
     alias wiki="z wiki && hx '~/OneDrive/wiki/00-09 Index/00.00 Index.md' && z -"
+    alias btnet="bt-network -c 40:5E:F6:61:4B:C9 nap & disown"
 end
 starship init fish | source
 zoxide init fish | source

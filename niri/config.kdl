@@ -702,7 +702,8 @@ spawn-at-startup "noctalia"
 // That did not work ...
 // spawn-at-startup "brave-ompifgpmddkgmclendfeacglnodjjndh-Default"
 // spawn-at-startup "brave-faolnafnngnfdaknnbpnkhgohbobgegn-Default"
+
 spawn-at-startup "brave-browser"
-spawn-at-startup "kitty"
-spawn-at-startup "rider"
+// spawn-at-startup "kitty"
+// spawn-at-startup "rider"
 
