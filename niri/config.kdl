@@ -608,7 +608,10 @@ binds {
     Mod+Space       { switch-layout "next"; }
     Mod+Shift+Space { switch-layout "prev"; }
 
-    Print { screenshot; }
+    Print { spawn-sh "noctalia msg screenshot-region --annotate"; }
+    // Ctrl+Print { spawn-sh "noctiala msg screenshot-fulllscreen --annotate pick"; }
+    // Alt+Print { screenshot-window; }
+    // Print { screenshot; }
     Ctrl+Print { screenshot-screen; }
     Alt+Print { screenshot-window; }
 
