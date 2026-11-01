@@ -650,12 +650,14 @@ blur {
     noise 0.03 // default is 0.03
     saturation 1.5 // default is 1.5
 }
+
 // Create Workspaces
 // - Rider
 //   - Start Rider at startup
 // - Werma-Communication
 //   - Start Outlook
 //   - Start Teams
+// Starting PWAs doesn't seem to work that well.
 workspace "Rider" {
     open-on-output "DP-5" // fallback gibt es erst spaeter "eDP-1"
 }
@@ -664,19 +666,19 @@ window-rule{
     open-on-workspace "Rider"
     open-focused true
 }
-workspace "WermaComm" {
-    open-on-output "eDP-1"
-}
-window-rule{
-    match at-startup=true app-id="brave-ompifgpmddkgmclendfeacglnodjjndh-Default" // Teams
-    open-on-workspace "Werma-Communication"
-    open-focused false
-}
-window-rule{
-    match at-startup=true app-id="brave-faolnafnngnfdaknnbpnkhgohbobgegn-Default" // Outlook
-    open-on-workspace "WermaComm"
-    open-focused false
-}
+// workspace "WermaComm" {
+//     open-on-output "eDP-1"
+// }
+// window-rule{
+//     match at-startup=true app-id="brave-ompifgpmddkgmclendfeacglnodjjndh-Default" // Teams
+//     open-on-workspace "Werma-Communication"
+//     open-focused false
+// }
+// window-rule{
+//     match at-startup=true app-id="brave-faolnafnngnfdaknnbpnkhgohbobgegn-Default" // Outlook
+//     open-on-workspace "WermaComm"
+//     open-focused false
+// }
 workspace "DevOps" {
     open-on-output "DP-6"
 }
@@ -685,11 +687,11 @@ window-rule{
     open-on-workspace "DevOps"
     open-focused false
 }
-window-rule{
-    match at-startup=true app-id="kitty"
-    open-on-workspace "DevOps"
-    open-focused false
-}
+// window-rule{
+//     match at-startup=true app-id="kitty"
+//     open-on-workspace "DevOps"
+//     open-focused false
+// }
 window-rule{
     match app-id="kitty" is-active=false
     opacity 0.85
@@ -705,5 +707,5 @@ spawn-at-startup "noctalia"
 
 spawn-at-startup "brave-browser"
 // spawn-at-startup "kitty"
-// spawn-at-startup "rider"
+spawn-at-startup "rider"
 
