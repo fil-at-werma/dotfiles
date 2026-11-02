@@ -697,7 +697,7 @@ window-rule{
 // }
 window-rule{
     match app-id="kitty" is-active=false
-    opacity 0.85
+    opacity 0.6
     background-effect {
         blur true
         xray true
