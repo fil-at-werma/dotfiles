@@ -366,6 +366,9 @@ binds {
     Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
 
+    Mod+F2 hotkey-overlay-title="Open Brave" { spawn "brave-browser"; }
+    Mod+F3 hotkey-overlay-title="Open FileManager" { spawn "nautilus"; }
+
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.
     // For example, this is a standard bind to toggle the screen reader (orca).
@@ -661,40 +664,35 @@ blur {
 //   - Start Outlook
 //   - Start Teams
 // Starting PWAs doesn't seem to work that well.
+workspace "Outlook" {
+    open-on-output "eDP-1"
+}
 workspace "Rider" {
     open-on-output "DP-5" // fallback gibt es erst spaeter "eDP-1"
 }
+workspace "DevOps" {
+    open-on-output "DP-6"
+}
 window-rule{
-    match at-startup=true app-id="rider"
+    match at-startup=true app-id="jetbrains-rider"
     open-on-workspace "Rider"
     open-focused true
 }
-// workspace "WermaComm" {
-//     open-on-output "eDP-1"
-// }
-// window-rule{
-//     match at-startup=true app-id="brave-ompifgpmddkgmclendfeacglnodjjndh-Default" // Teams
-//     open-on-workspace "Werma-Communication"
-//     open-focused false
-// }
-// window-rule{
-//     match at-startup=true app-id="brave-faolnafnngnfdaknnbpnkhgohbobgegn-Default" // Outlook
-//     open-on-workspace "WermaComm"
-//     open-focused false
-// }
-workspace "DevOps" {
-    open-on-output "DP-6"
+window-rule{
+    match at-startup=true app-id="brave-ompifgpmddkgmclendfeacglnodjjndh-Default"
+    open-on-workspace "DevOps"
+    open-focused false
+}
+window-rule{
+    match at-startup=true app-id="brave-faolnafnngnfdaknnbpnkhgohbobgegn-Default"
+    open-on-workspace "Outlook"
+    open-focused false
 }
 window-rule{
     match at-startup=true app-id="brave-browser"
     open-on-workspace "DevOps"
     open-focused false
 }
-// window-rule{
-//     match at-startup=true app-id="kitty"
-//     open-on-workspace "DevOps"
-//     open-focused false
-// }
 window-rule{
     match app-id="kitty" is-active=false
     opacity 0.6
@@ -704,11 +702,12 @@ window-rule{
     }
 }
 spawn-at-startup "noctalia"
-// That did not work ...
-// spawn-at-startup "brave-ompifgpmddkgmclendfeacglnodjjndh-Default"
-// spawn-at-startup "brave-faolnafnngnfdaknnbpnkhgohbobgegn-Default"
 
 spawn-at-startup "brave-browser"
-// spawn-at-startup "kitty"
 spawn-at-startup "rider"
+// Teams
+spawn-sh-at-startup "brave-browser --profile-derectory=Default --app-id=ompifgpmddkgmclendfeacglnodjjndh %U"
+// Outlook
+spawn-sh-at-startup "brave-browser --profile-derectory=Default --app-id=faolnafnngnfdaknnbpnkhgohbobgegn %U"
+
 
