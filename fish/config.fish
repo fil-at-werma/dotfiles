@@ -7,7 +7,7 @@ if status is-interactive
     alias la="eza -a --color=always --icons=always --long"
     alias up="sudo dnf upgrade --refresh -y && sudo dnf autoremove -y && flatpak update"
     alias t="todo.sh"
-    alias ta="todo.sh add '$(date -Idate)$1'"
+    alias ta="todo.sh -t add"
     alias td="todo.sh do"
     alias add-key="ssh-add ~/.ssh/$1"
     alias wiki="z wiki && hx '~/OneDrive/wiki/00-09 Index/00.00 Index.md' && z -"
