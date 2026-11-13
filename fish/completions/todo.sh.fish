@@ -1,0 +1,1 @@
+/home/filipczyk/Projects/GitHub/Fildor/todo.txt-fish-completions/todo.sh.fish
