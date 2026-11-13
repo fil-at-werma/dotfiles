@@ -679,7 +679,8 @@ window-rule{
     open-focused true
 }
 window-rule{
-    match at-startup=true app-id="brave-ompifgpmddkgmclendfeacglnodjjndh-Default"
+    // match at-startup=true app-id="brave-ompifgpmddkgmclendfeacglnodjjndh-Default"
+    match at-startup=true app-id="chrome-ompifgpmddkgmclendfeacglnodjjndh-Default"
     open-on-workspace "DevOps"
     open-focused false
 }
@@ -691,7 +692,7 @@ window-rule{
 window-rule{
     match at-startup=true app-id="brave-browser"
     open-on-workspace "DevOps"
-    open-focused false
+    open-focused true
 }
 window-rule{
     match app-id="kitty" is-active=false
@@ -706,8 +707,9 @@ spawn-at-startup "noctalia"
 spawn-at-startup "brave-browser"
 spawn-at-startup "rider"
 // Teams
-spawn-sh-at-startup "brave-browser --profile-derectory=Default --app-id=ompifgpmddkgmclendfeacglnodjjndh %U"
+// spawn-sh-at-startup "brave-browser --profile-derectory=Default --app-id=ompifgpmddkgmclendfeacglnodjjndh %U"
+spawn-sh-at-startup "google-chrome --profile-directory=Default --app-id=ompifgpmddkgmclendfeacglnodjjndh %U"
 // Outlook
-spawn-sh-at-startup "brave-browser --profile-derectory=Default --app-id=faolnafnngnfdaknnbpnkhgohbobgegn %U"
+spawn-sh-at-startup "brave-browser --profile-directory=Default --app-id=faolnafnngnfdaknnbpnkhgohbobgegn %U"
 
 
