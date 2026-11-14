@@ -341,7 +341,7 @@ window-rule {
 
 // Example: enable rounded corners for all windows.
 // (This example rule is commented out with a "/-" in front.)
-/-window-rule {
+window-rule {
     geometry-corner-radius 12
     clip-to-geometry true
 }
@@ -702,13 +702,21 @@ window-rule{
         xray true
     }
 }
+window-rule{
+    match app-id=r#"helix$"# is-active=false
+    opacity 0.6
+    background-effect {
+        blur true
+        xray true
+    }
+}
 spawn-at-startup "noctalia"
 
 spawn-at-startup "brave-browser"
 spawn-at-startup "rider"
 // Teams
-// spawn-sh-at-startup "brave-browser --profile-derectory=Default --app-id=ompifgpmddkgmclendfeacglnodjjndh %U"
-spawn-sh-at-startup "google-chrome --profile-directory=Default --app-id=ompifgpmddkgmclendfeacglnodjjndh %U"
+spawn-sh-at-startup "sleep 2 && flatpak run --command=/app/bin/chromium io.github.ungoogled_software.ungoogled_chromium --profile-Directory=Default --app-id=ompifgpmddkgmc
+lendfeacglnodjjndh %U"
 // Outlook
 spawn-sh-at-startup "brave-browser --profile-directory=Default --app-id=faolnafnngnfdaknnbpnkhgohbobgegn %U"
 
