@@ -715,8 +715,8 @@ spawn-at-startup "noctalia"
 spawn-at-startup "brave-browser"
 spawn-at-startup "rider"
 // Teams
-spawn-sh-at-startup "sleep 2 && flatpak run --command=/app/bin/chromium io.github.ungoogled_software.ungoogled_chromium --profile-Directory=Default --app-id=ompifgpmddkgmc
-lendfeacglnodjjndh %U"
+// spawn-sh-at-startup "flatpak run --command=/app/bin/chromium io.github.ungoogled_software.ungoogled_chromium --profile-Directory=Default --app-id=ompifgpmddkgmc
+// lendfeacglnodjjndh %U"
 // Outlook
 spawn-sh-at-startup "brave-browser --profile-directory=Default --app-id=faolnafnngnfdaknnbpnkhgohbobgegn %U"
 
