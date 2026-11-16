@@ -6,6 +6,7 @@ if status is-interactive
     alias ff="fastfetch"
     alias ls="eza --color=always --icons=always --long"
     alias la="eza -a --color=always --icons=always --long"
+    alias dtr="eza -D --tree --color=always --icons=always --level=3"
     alias up="sudo dnf upgrade --refresh -y && sudo dnf autoremove -y && flatpak update"
     alias t="todo.sh"
     alias ta="todo.sh -t add"
